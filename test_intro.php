@@ -2,7 +2,8 @@
 <html>
 <head>
 <script src="ajax_server.js" ></script>
-<script src="raphael-min.js"  ></script>
+<script src="raphael-min.js" ></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1/jquery.min.js"></script>
 <link rel="stylesheet" type="text/css" href="mystyle.css">
 
 </head>
@@ -17,7 +18,7 @@ include 'login.php';
 
 login();
 ?>
-<p id="Statment">A Paragraph.</p>
+
 
 
 </br>
@@ -35,7 +36,7 @@ Password:<input type="text" name="password"></br>
 <div id="paper1" class="board">
 
 </div>
-
+<p id="Statment">A Paragraph.</p>
 
 </body>
 </html>

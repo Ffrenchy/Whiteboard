@@ -30,9 +30,9 @@ if($count==1){
 session_start();
 $_SESSION['login'] = $myusername;
 
-header("location:connection.php");
+header("location:start.php");
 }
 else {
-echo "Wrong Username or Password";
+header("location:index.php");
 }
 ?>

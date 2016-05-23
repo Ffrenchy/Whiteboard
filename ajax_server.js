@@ -2,15 +2,39 @@ var drawing = false;
 var path, pathOfString,oldX,oldY,newX,newY;
 var selected;
 var tool = "draw";
+var from_point = 0;
+var old = "";
 function writeitems() {
 
-	var xhttp = new XMLHttpRequest();
-	  xhttp.onreadystatechange = function() {
-	    if (xhttp.readyState == 4 && xhttp.status == 200) {
-	      document.getElementById("send_info.txt").innerHTML = xhttp.responseText;
-		var circle_final = paper.ellipse(100, 100, 25, 25);
-		}
-	  };
+	var requests = function(){
+	$.ajax({
+		   type: "GET",
+		   url: "logs.txt",
+		   ifModified: true,
+		   success: function(data){
+		var line = data.split('\n');
+		
+		for(var i = from_point; i < line.length; i++ )
+		{
+		from_point = i;
+			var action = line[i].split(' ');
+		console.log(from_point);
+		switch (action[1]) {
+			case 'circle':
+			circle = paper.ellipse(action[2], action[3], action[4], action[5]).attr({stroke: action[0]});
+			break; 
+			case 'square':
+			square = paper.rect(action[2], action[3], action[4], action[5]).attr({stroke: action[0]});
+			default:
+			path = paper.path(line[i]).attr({stroke: action[0]});
+			break;
+		from_point = i;
+		console.log(from_point);
+		}}}
+
+		})
+	setTimeout(requests, 1000);
+	}
 	var paper = Raphael("paper1", 820, 620);
 	var background = paper.image("Board.jpg", 0,0,820,620);
 
@@ -40,6 +64,5 @@ function writeitems() {
 		oldX = newX;
 		oldY = newY;
 	}
-
-
+setTimeout(requests, 100);
 }

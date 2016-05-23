@@ -4,3 +4,113 @@ div.board
 	position: fixed;
 	left: 0px;  
 }
+body
+{
+background-color: #33aa33;
+}
+
+
+footer
+{
+position: fixed;
+display: block;
+left: 30px;
+right: 30px;
+bottom: 0px;
+text-align: center;
+padding: 14px 16px;
+background-color: #303030;
+}
+ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #303030;
+}
+
+li {
+    float: left;
+}
+
+li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+li a:hover {
+    background-color: #111;
+}
+#header
+{
+position: fixed;
+
+top:0px;
+left: 0px;
+right: 0px;
+padding-bottom: 0px;	
+color: white;
+background-color: #009900;
+}
+
+
+#content
+{
+position: fixed;
+top: 16%;
+}
+
+#login
+{
+position: absolute;
+border-style: groove;
+border-color: #00ff00;
+
+top:20px;
+right: 10px;
+width: 280px;
+padding: 10px;
+padding-bottom: 0px;
+	
+color: white;
+background-color: #009900;
+}
+
+
+#logged_in
+{
+position: absolute;
+border-style: groove;
+border-color: #00ff00;
+height: 60px;
+top:20px;
+right: 10px;
+width: 280px;
+padding: 10px;
+	
+color: white;
+background-color: #009900;
+}
+#arrange
+{
+position: fixed;
+float: right;
+right: 20px;
+}
+#arranged
+{
+position: absolute;
+float: right;
+top: 50px;
+right: 7px;
+}
+
+#pic
+{
+position: fixed;
+left: -1200px;
+top: -1200px;
+}
